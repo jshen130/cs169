@@ -1,0 +1,13 @@
+{% if error != 1%}
+<p><strong>{{ error }}</strong></p>
+{% else %}
+<h1>Welcome {{ user.username }} </h1>
+<h1>You have logged in {{ user.counter }} time(s)</h1>
+
+<form action="/login/" method="post">
+  {% csrf_token %}
+  <div class="logoutButtons">
+	<button type="submit" id="Logout">Logout</button>
+  </div>
+</form>
+{% endif %}

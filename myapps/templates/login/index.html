@@ -1,0 +1,21 @@
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<h1> Please enter your credentials below </h1>
+
+<form action="/login/add/" method="post">
+  {% csrf_token %}
+  <div class="loginLabel">Username:</div>
+  <div class="loginField">
+	<input type="text" name="username" class="loginText">
+  </div>
+  <br />
+  <div class="loginLabel">Password:</div>
+  <div class="loginField">
+	<input type="password" name="password" class="loginText">
+  </div>
+  <br />
+  <div id="loginButtons">
+	<button type="submit" name="login">Login</button>
+	<button type="submit" name="add">Add User</button>
+  </div>
+</form>
